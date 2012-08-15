@@ -11,8 +11,23 @@ namespace monoCycleKeeper
 	[Register ("MainScreenHorizontal")]
 	partial class MainScreenHorizontal
 	{
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblSpeed { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblSpeedUnits { get; set; }
+		
 		void ReleaseDesignerOutlets ()
 		{
+			if (lblSpeed != null) {
+				lblSpeed.Dispose ();
+				lblSpeed = null;
+			}
+
+			if (lblSpeedUnits != null) {
+				lblSpeedUnits.Dispose ();
+				lblSpeedUnits = null;
+			}
 		}
 	}
 }
